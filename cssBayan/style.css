@@ -7,6 +7,7 @@
     --font-size-meme-title: 1.5rem;
     --img-size: 20%;
     --border: solid 0.1rem black;
+    --icon-size: 1rem;
     
 }
 
@@ -27,14 +28,13 @@ body {
     font-weight: 700;
 }
 
-
 .meme-list {
     padding: 0;
     display: flex;
     flex-direction: column;
     border-top: var(--border);
-
 }
+
 
 .meme {
     display: flex;
@@ -45,6 +45,11 @@ body {
     cursor: pointer;
 }
 
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .meme-title {
     font-size: var(--font-size-meme-title);
@@ -68,6 +73,19 @@ body {
     height: var(--img-size);
 }
 
+.meme-icon {
+    visibility: hidden;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background-image: url(./images/cross.svg);
+    background-size: var(--font-size-main);
+    background-repeat: no-repeat;
+    transition: all ease-in-out 0.2s;
+}
+.meme:hover .meme-icon {
+    transform: rotate(45deg);
+}
+
 .meme-checkbox {
     display: none;
 }
@@ -82,4 +100,10 @@ body {
     width: var(--img-size);
     height: var(--img-size);
 }
+.meme-checkbox:checked + label .meme-icon{
+    transform: rotate(45deg);
+}
 
+.meme-list:hover .meme-icon {
+    visibility: visible;
+}
