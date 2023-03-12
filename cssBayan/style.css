@@ -8,12 +8,12 @@
     --font-size-main: 1rem;
     --font-size-title: 3rem;
     --font-size-meme-title: 1.5rem;
-    --img-size: 20%;
+    --img-size: 40%;
     --border: solid 0.1rem var(--color-main);
     --icon-size: 1rem;
     --color-accent: rgb(44, 44, 255);
     --color-main: black;
-    
+
 }
 
 
@@ -74,7 +74,7 @@ body {
     margin: 0 auto;
 }
 
-.meme-content img{
+.meme-content img {
     display: flex;
     margin: 0 auto;
     width: 0;
@@ -99,7 +99,8 @@ body {
 .meme-checkbox {
     display: none;
 }
-.meme-checkbox + label {
+
+.meme-checkbox+label {
     cursor: pointer;
     color: var(--color-accent);
 }
@@ -115,9 +116,11 @@ body {
     .meme-list:hover .meme-icon {
         visibility: visible;
     }
+
     .meme-list:hover .meme-title {
         color: var(--color-main);
     }
+
     .meme:hover .meme-content img {
         width: var(--img-size);
         height: var(--img-size);
@@ -128,15 +131,16 @@ body {
 /**********/
 /* CHECKS */
 /**********/
-.meme-checkbox:checked + label .meme-title{
+.meme-checkbox:checked+label .meme-title {
     color: var(--color-main);
 }
 
-.meme-checkbox:checked + label img{
+.meme-checkbox:checked+label img {
     width: var(--img-size);
     height: var(--img-size);
 }
-.meme-checkbox:checked + label .meme-icon{
+
+.meme-checkbox:checked+label .meme-icon {
     transform: rotate(45deg);
 }
 
@@ -146,6 +150,31 @@ body {
 .meme:active .meme-title {
     color: var(--color-accent);
 }
+
 .meme:active .meme-icon {
     background-color: var(--color-accent);
+}
+
+/************/
+/* */
+/************/
+
+/* Note: breakpoints don't have to be 320x568, 820x1180, 1920x1080).  */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    :root {
+        --font-size-title: 2rem;
+        --font-size-meme-title: 1.2rem;
+        --img-size: 60%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 420px) {
+    :root {
+        --font-size-title: 1.5rem;
+        --font-size-meme-title: 1.1rem;
+        --img-size: 60%;
+    }
 }
