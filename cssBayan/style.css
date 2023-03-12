@@ -8,6 +8,7 @@
     --img-size: 20%;
     --border: solid 0.1rem black;
     --icon-size: 1rem;
+    --color-accent: rgb(44, 44, 255);
     
 }
 
@@ -91,11 +92,17 @@ body {
 }
 .meme-checkbox + label {
     cursor: pointer;
+    color: var(--color-accent);
 }
 
 .meme-checkbox:checked + label {
     /* background-color: aqua; */
 }
+
+.meme-checkbox:checked + label .meme-title{
+    color: black;
+}
+
 .meme-checkbox:checked + label img{
     width: var(--img-size);
     height: var(--img-size);
@@ -106,4 +113,7 @@ body {
 
 .meme-list:hover .meme-icon {
     visibility: visible;
+}
+.meme-list:hover .meme-title {
+    color: black;
 }
