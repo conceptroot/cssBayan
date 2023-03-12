@@ -94,7 +94,7 @@ body {
 }
 
 .meme-checkbox:checked + label {
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 .meme-checkbox:checked + label img{
     width: var(--img-size);
