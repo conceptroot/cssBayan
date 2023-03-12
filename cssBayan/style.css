@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --font: 'Lato', sans-serif;
+    --font-size-main: 1rem;
+    --font-size-title: 2rem;
+    --font-size-meme-title: 1.5rem;
+    --img-size: 60%;
+    
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 80vw;
+}
+
+.title {
+    font-size: var(--font-size-title);
+    font-weight: 700;
+}
+
+
+.meme-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.meme {
+    display: flex;
+    flex-direction: column;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    list-style: none;
+    cursor: pointer;
+}
+
+
+.meme-title {
+    font-size: var(--font-size-meme-title);
+    font-weight: 700;
+}
+
+.meme-content {
+    margin: 0 auto;
+}
+
+.meme-content img{
+    display: flex;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    transition: all ease-in-out 0.2s;
+}
+
+.meme:hover .meme-content img {
+    width: var(--img-size);
+    height: var(--img-size);
+}
+
+.meme-checkbox {
+    display: none;
+}
+.meme-checkbox + label {
+    cursor: pointer;
+}
+
+.meme-checkbox:checked + label {
+    background-color: aqua;
+}
+.meme-checkbox:checked + label img{
+    width: var(--img-size);
+    height: var(--img-size);
+}
+
