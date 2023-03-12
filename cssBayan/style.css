@@ -3,9 +3,10 @@
 :root {
     --font: 'Lato', sans-serif;
     --font-size-main: 1rem;
-    --font-size-title: 2rem;
+    --font-size-title: 3rem;
     --font-size-meme-title: 1.5rem;
-    --img-size: 60%;
+    --img-size: 20%;
+    --border: solid 0.1rem black;
     
 }
 
@@ -31,13 +32,15 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    border-top: var(--border);
+
 }
 
 .meme {
     display: flex;
+    padding: 0.7rem 0;
     flex-direction: column;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
+    border-bottom: var(--border);
     list-style: none;
     cursor: pointer;
 }
