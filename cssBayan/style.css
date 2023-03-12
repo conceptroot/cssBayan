@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+/*************/
+/* VARIABLES */
+/*************/
 :root {
     --font: 'Lato', sans-serif;
     --font-size-main: 1rem;
     --font-size-title: 3rem;
     --font-size-meme-title: 1.5rem;
     --img-size: 20%;
-    --border: solid 0.1rem black;
+    --border: solid 0.1rem var(--color-main);
     --icon-size: 1rem;
     --color-accent: rgb(44, 44, 255);
+    --color-main: black;
     
 }
 
+
+
+/*********/
+/* BASE */
+/********/
 body {
     box-sizing: border-box;
     margin: 0;
@@ -29,13 +38,17 @@ body {
     font-weight: 700;
 }
 
+
+
+/*********/
+/* MEMES */
+/********/
 .meme-list {
     padding: 0;
     display: flex;
     flex-direction: column;
     border-top: var(--border);
 }
-
 
 .meme {
     display: flex;
@@ -69,22 +82,18 @@ body {
     transition: all ease-in-out 0.2s;
 }
 
-.meme:hover .meme-content img {
-    width: var(--img-size);
-    height: var(--img-size);
-}
 
 .meme-icon {
     visibility: hidden;
     width: var(--icon-size);
     height: var(--icon-size);
-    background-image: url(./images/cross.svg);
-    background-size: var(--font-size-main);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-image: url("./images/cross.svg");
+    mask-image: url("./images/cross.svg");
+    background-color: var(--color-main);
     background-repeat: no-repeat;
     transition: all ease-in-out 0.2s;
-}
-.meme:hover .meme-icon {
-    transform: rotate(45deg);
 }
 
 .meme-checkbox {
@@ -95,12 +104,30 @@ body {
     color: var(--color-accent);
 }
 
-.meme-checkbox:checked + label {
-    /* background-color: aqua; */
+/**********/
+/* HOVERS */
+/**********/
+.meme:hover .meme-icon {
+    transform: rotate(45deg);
 }
 
+.meme-list:hover .meme-icon {
+    visibility: visible;
+}
+.meme-list:hover .meme-title {
+    color: var(--color-main);
+}
+.meme:hover .meme-content img {
+    width: var(--img-size);
+    height: var(--img-size);
+}
+
+
+/**********/
+/* CHECKS */
+/**********/
 .meme-checkbox:checked + label .meme-title{
-    color: black;
+    color: var(--color-main);
 }
 
 .meme-checkbox:checked + label img{
@@ -111,9 +138,12 @@ body {
     transform: rotate(45deg);
 }
 
-.meme-list:hover .meme-icon {
-    visibility: visible;
+/***********/
+/* ACTIVES */
+/***********/
+.meme:active .meme-title {
+    color: var(--color-accent);
 }
-.meme-list:hover .meme-title {
-    color: black;
+.meme:active .meme-icon {
+    background-color: var(--color-accent);
 }
