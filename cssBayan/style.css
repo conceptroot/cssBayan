@@ -107,19 +107,21 @@ body {
 /**********/
 /* HOVERS */
 /**********/
-.meme:hover .meme-icon {
-    transform: rotate(45deg);
-}
+@media (hover: hover) {
+    .meme:hover .meme-icon {
+        transform: rotate(45deg);
+    }
 
-.meme-list:hover .meme-icon {
-    visibility: visible;
-}
-.meme-list:hover .meme-title {
-    color: var(--color-main);
-}
-.meme:hover .meme-content img {
-    width: var(--img-size);
-    height: var(--img-size);
+    .meme-list:hover .meme-icon {
+        visibility: visible;
+    }
+    .meme-list:hover .meme-title {
+        color: var(--color-main);
+    }
+    .meme:hover .meme-content img {
+        width: var(--img-size);
+        height: var(--img-size);
+    }
 }
 
 
